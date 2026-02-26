@@ -13,7 +13,7 @@ spec:
   mcp: "master"
   sourceFiles:
 {% if include_oadp_operator %}
-    - fileName: data-protection/OadpSecret.yaml
+    - fileName: OadpSecret.yaml
       policyName: "{{ 'oadp-config' if manyPolicies else 'config' }}-policy"
       data:
         cloud: {{ lookup('template', './s3-creds.j2') | b64encode }}
